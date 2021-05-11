@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myfrontendapp
+  labels:
+    app: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: myfrontendapp
+          image: dondonald1/frontend-rest-api:1.1.0
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1 
+kind: Service 
+metadata:
+  name: myfrontendapp-lb-service
+  labels:
+    app: frontend
+spec:
+  type: LoadBalancer
+  selector: 
+     app: frontend
+  ports:
+   - port: 80
+     name: http
+     targetPort: 80

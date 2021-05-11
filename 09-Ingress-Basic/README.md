@@ -1,4 +1,4 @@
-# Ingress - Basics
+<!-- # Ingress - Basics
 
 ## Step-01: Introduction
 
@@ -135,4 +135,4 @@ kubectl delete -f kube-manifests/
 ```
 Ingress Admission Webhooks
 With nginx-ingress-controller version 0.25+, the nginx ingress controller pod exposes an endpoint that will integrate with the validatingwebhookconfiguration Kubernetes feature to prevent bad ingress from being added to the cluster. This feature is enabled by default since 0.31.0.
-```
+``` -->
